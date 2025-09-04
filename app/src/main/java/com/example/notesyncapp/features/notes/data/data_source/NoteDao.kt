@@ -5,7 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.notesyncapp.notes.data.model.NoteEntity
+import com.example.notesyncapp.features.notes.data.model.NoteEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
