@@ -6,8 +6,12 @@ import com.example.notesyncapp.features.notes.data.model.NoteEntity
 
 @Database(
     version = 1,
-    entities = [NoteEntity::class]
+    entities = [NoteEntity::class],
+    exportSchema = false
 )
 abstract class NoteDatabase:RoomDatabase() {
     abstract val noteDao: NoteDao
+    companion object {
+        const val DATABASE_NAME = "notes_database.db"
+    }
 }
