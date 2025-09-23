@@ -3,7 +3,7 @@ package com.example.notesyncapp.features.notes.data.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "notes")
 data class NoteEntity(
     val title: String,
     val path: String,
@@ -11,5 +11,5 @@ data class NoteEntity(
     val updatedAt: String,
     val syncedAt: String,
     val isLocked: Boolean,
-    @PrimaryKey val id: Int? = null,
+    @PrimaryKey(autoGenerate = true) val id: Int? = null,
 )
