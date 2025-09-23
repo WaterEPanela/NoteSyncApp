@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.notesyncapp.features.notes.data.data_source.NoteDao
 import com.example.notesyncapp.features.notes.data.data_source.NoteDatabase
+import com.example.notesyncapp.features.notes.data.data_source.NoteFileStorage
 import com.example.notesyncapp.features.notes.data.repository.NoteRepositoryImpl
 import com.example.notesyncapp.features.notes.domain.repository.NoteRepository
 import dagger.Module
@@ -29,7 +30,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideNoteRepository(db: NoteDatabase): NoteRepository {
-        return NoteRepositoryImpl(db.noteDao)
+    fun provideNoteRepository(db: NoteDatabase, noteFileStorage: NoteFileStorage): NoteRepository {
+        return NoteRepositoryImpl(db.noteDao, noteFileStorage)
     }
 }
